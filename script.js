@@ -1,7 +1,9 @@
+
+
 var boxanime1= anime({
     targets:document.querySelectorAll('.box'),
     loop:true,
-    translateY:['35rem','48rem'],
+    translateY:['35rem','43rem'],
     opacity:{
         value:[0,1],
         direction:'alternate'
@@ -17,7 +19,7 @@ var boxanime1= anime({
 var boxanime2= anime({
     targets:document.querySelectorAll('.boxs'),
     loop:true,
-    translateY:['35rem','48rem'],
+    translateY:['35rem','43rem'],
     opacity:{
         value:[0,1],
         direction:'alternate'
@@ -98,7 +100,7 @@ var tl = anime.timeline({
         boxanime.play()
         boxanime2.play()
         boxanime1.play()
-        boxanime5.play()
+       
         boxanime6.play()
     }
 })
@@ -111,7 +113,7 @@ tl.add({
         }
        
     },
-    translateY:['30rem','30rem'],
+    translateY:['23rem','23rem'],
     ' easing': 'cubicBezier(.45,1.03,.7,.61)',
     delay:500,
     
@@ -172,7 +174,12 @@ const mps = anime({
     duration:1000,
     translateX:'+=100',
     loop:true,
-    delay:400
+    delay:function(el,i){
+        if(i === 1) {
+            return 700;
+        }
+        return 600
+    }
 
 })
 const remove= anime({
@@ -302,6 +309,17 @@ const bb = anime({
     complete:function(){
         console.log("rinning")
         bb2.play()
+        setTimeout(function(){
+            console.log('remob')
+            anime({
+                targets:document.querySelectorAll('.bb2'),
+                opacity:[1,0],
+                
+                duration:4000,
+               
+                easing: 'easeInExpo',
+            })
+        },3000)
     },
     delay:3000
 })

@@ -333,9 +333,27 @@ body{
         transform: translateX(-12rem);
     
 }
+.events {
+    display: flex;
+    position: absolute;
+    bottom: 16rem;
+    left: 17rem;
+    height: 8rem;
+    width: 55%;
+    box-sizing: border-box;
+    justify-content: space-around;
+    transform: rotate(90deg);
+}
+
+.event{
+    height: 5rem;
+    width: 5rem;
+    background-color: $teal;
+
+}
 .bb {
-    
-        margin-top: 30rem;
+        position: relative;
+        margin-top: 28rem;
         height: 41rem;
         width: 100%;
     
